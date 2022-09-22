@@ -1,4 +1,4 @@
-# FlutterPlaground
+# FlutterPlayground
 
 ## Código de testes
 
