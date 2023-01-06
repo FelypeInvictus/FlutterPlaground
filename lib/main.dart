@@ -32,28 +32,36 @@ class _telaHideTesteState extends State<telaHideTeste> {
 
   void _hideContainer() {
     setState(() {
-      _isVisible = false;
+      _isVisible = !_isVisible;
     });
   }
 
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            if(_isVisible) Container(
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+          Visibility(
+            maintainAnimation: true,
+            maintainState: true,
+            maintainSize: true,
+            visible: _isVisible,
+            child: Container(
               height: 50,
               width: 80,
               color: Colors.amber,
             ),
+          ),
+          const SizedBox(
+            height: 50,
+          ),
+          
           ElevatedButton(
-            onPressed: _hideContainer, 
-            child: const Text('Ocultar') )
-            
-          ]
-      ),
+            //String texto = '',
+            //String texto = _isVisible ? 'Ocultar' : 'Mostrar';
+              onPressed: _hideContainer, child: Text(_isVisible ? 'Ocultar' : 'Mostrar')),
+        ]),
       ),
     );
   }
