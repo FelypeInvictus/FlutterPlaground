@@ -1,3 +1,4 @@
+import 'package:app/learning_stack.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: const telaHideTeste(),
+      home: const LearningStack(),
     );
   }
 }
