@@ -1,6 +1,7 @@
-import 'dart:html';
+import 'package:app/screens/home_tab.dart';
+import 'package:app/screens/learning_stack.dart';
+import 'package:app/screens/container_hide.dart';
 
-import 'package:app/screens/home.dart';
 import 'package:flutter/material.dart';
 
 class buttons extends StatelessWidget {
@@ -9,35 +10,37 @@ class buttons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Column(children: [
+      child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
         ElevatedButton(
           onPressed: () {
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) {
-                return const home();
+                return const HomeTab();
               }),
             );
           },
           child: Text('home'.toUpperCase()),
         ),
+        space(),
         ElevatedButton(
           onPressed: () {
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) {
-                return Stack();
+                return const LearningStack();
               }),
             );
           },
           child: Text('stack'.toUpperCase()),
         ),
+        space(),
         ElevatedButton(
           onPressed: (() {
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) {
-                return Stack();
+                return containerHide();
               }),
             );
           }),
@@ -46,4 +49,8 @@ class buttons extends StatelessWidget {
       ]),
     );
   }
+}
+
+SizedBox space() {
+  return const SizedBox(height: 20);
 }

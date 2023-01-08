@@ -1,5 +1,4 @@
-import 'package:app/home_app.dart';
-import 'package:app/learning_stack.dart';
+import 'package:app/screens/home_tab.dart';
 import 'package:app/screens/home.dart';
 import 'package:flutter/material.dart';
 
