@@ -182,82 +182,6 @@ class QuickCheckingEmotions extends StatelessWidget {
   }
 }
 
-class AppointmentCard extends StatelessWidget {
-  // final void Function() onTap;
-
-  const AppointmentCard({
-    Key? key,
-    // required this.onTap,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          width: double.infinity,
-          decoration: BoxDecoration(
-            color: const Color.fromARGB(192, 250, 250, 250),
-            borderRadius: BorderRadius.circular(10),
-          ),
-          child: Material(
-            color: Colors.transparent,
-            child: Padding(
-              padding: const EdgeInsets.all(20),
-              child: Column(
-                children: [
-                  Row(
-                    children: [
-                      const CircleAvatar(
-                        backgroundImage:
-                            AssetImage('assets/profile/doctors/doctor01.jpeg'),
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
-                          Text('Dr.Carlos Moreira',
-                              style: TextStyle(color: Colors.black)),
-                          SizedBox(
-                            height: 2,
-                          ),
-                          Text(
-                            'Psicologo',
-                            style: TextStyle(
-                              color: Colors.black,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
-        Container(
-          margin: const EdgeInsets.symmetric(horizontal: 20),
-          width: double.infinity,
-          height: 5,
-          decoration: const BoxDecoration(
-            color: Colors.green,
-            borderRadius: BorderRadius.only(
-              bottomRight: Radius.circular(10),
-              bottomLeft: Radius.circular(10),
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-}
 
 class UserIntro extends StatelessWidget {
   const UserIntro({
@@ -273,8 +197,8 @@ class UserIntro extends StatelessWidget {
       children: [
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const CircleAvatar(
+          children: const [
+            CircleAvatar(
               backgroundImage:
                   AssetImage('assets/profile/user/user_default.png'),
               radius: 30,
