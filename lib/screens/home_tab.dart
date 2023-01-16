@@ -34,7 +34,10 @@ class HomeTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(children: <Widget>[
+      body: Stack(
+        children: <Widget>[
+      
+        
         Container(
           height: 180,
           width: MediaQuery.of(context).size.width,
@@ -53,37 +56,45 @@ class HomeTab extends StatelessWidget {
                     height: 10,
                   ),
                   UserIntro(),
+                  
                 ]),
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 40),
-          child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const <Widget>[
-                // SizedBox(
-                //   height: 20,
-                // ),
+        //SizedBox(height: 40),
+        Spacer(),
+        QuickCheckingEmotions(),
+        
+        
+        
+        // Padding(
+        //   padding: const EdgeInsets.symmetric(horizontal: 40),
+        //   child: Column(
+        //       mainAxisAlignment: MainAxisAlignment.center,
+        //       crossAxisAlignment: CrossAxisAlignment.start,
+        //       children: const <Widget>[
+        //         // SizedBox(
+        //         //   height: 20,
+        //         // ),
 
-                QuickCheckingEmotions(),
+                
 
-                SizedBox(
-                  height: 50,
-                ),
+        //         SizedBox(
+        //           height: 50,
+        //         ),
 
-                SizedBox(
-                  height: 30,
-                ),
+        //         SizedBox(
+        //           height: 30,
+        //         ),
 
-                // AppointmentCard(onTap: onPressedScheduleCard),
+        //         // AppointmentCard(onTap: onPressedScheduleCard),
 
-                SizedBox(
-                  height: 70,
-                ),
-              ]),
-        ),
+        //         SizedBox(
+        //           height: 70,
+        //         ),
+        //       ]),
+        // ),
       ]),
+      
     );
   }
 }

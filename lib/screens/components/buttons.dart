@@ -1,3 +1,4 @@
+import 'package:app/screens/bottom_model_sheet.dart';
 import 'package:app/screens/home_tab.dart';
 import 'package:app/screens/learning_stack.dart';
 import 'package:app/screens/container_hide.dart';
@@ -45,6 +46,18 @@ class buttons extends StatelessWidget {
             );
           }),
           child: Text('container hide'.toUpperCase()),
+        ),
+        space(),
+        ElevatedButton(
+          onPressed: (() {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) {
+                return const BottomSheetTest();
+              }),
+            );
+          }),
+          child: Text('BottomSheet'.toUpperCase()),
         ),
       ]),
     );
