@@ -7,11 +7,13 @@ class BottomSheetTest extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        colorSchemeSeed: const Color(0xff6750a4),
-        useMaterial3: true,
+        colorSchemeSeed: const Color.fromARGB(255, 95, 164, 80),
+        //useMaterial3: true,
       ),
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(title: const Text('Bottom Sheet Test')),
+        appBar: AppBar(title: const Text('Bottom Sheet Test'),
+        centerTitle: true),
         body: const BottomSheetExample(),
       ),
     );
@@ -30,8 +32,14 @@ class BottomSheetExample extends StatelessWidget {
           showModalBottomSheet<void>(
             context: context,
             builder: (BuildContext context) {
-              return SizedBox(
-                height: 200,
+              return 
+
+
+              Container(
+               // width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height *.60,
+                
+               
                 child: Center(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -42,9 +50,13 @@ class BottomSheetExample extends StatelessWidget {
                         child: const Text('Fechar'),
                         onPressed: () => Navigator.pop(context),
                       ),
+                    
                     ],
                   ),
-                ),
+  
+                
+              ),
+  
               );
             },
           );
