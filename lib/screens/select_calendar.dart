@@ -4,69 +4,74 @@ import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
 
 // ...
 
-class BasicDateField extends StatelessWidget {
-  final format = DateFormat("yyyy-MM-dd");
+// class BasicDateField extends StatelessWidget {
+//   final format = DateFormat("yyyy-MM-dd");
 
-  BasicDateField({super.key});
-  @override
-  Widget build(BuildContext context) {
-    return 
+//   BasicDateField({super.key});
+//   @override
+//   Widget build(BuildContext context) {
+//     return 
     
-    Material(
-    child: 
-      Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-      Text('Data (${format.pattern})'),
-      DateTimeField(
-        format: format,
-        onShowPicker: (context, currentValue) {
-          return showDatePicker(
-              context: context,
-              firstDate: DateTime(1900),
-              initialDate: currentValue ?? DateTime.now(),
-              lastDate: DateTime(2100));
-        },
-      ),
+//     Material(
+//     child: 
+//       Column(
+//         mainAxisAlignment: MainAxisAlignment.center,
+//         children: <Widget>[
+//       Text('Data (${format.pattern})'),
+//       DateTimeField(
+//         format: format,
+//         onShowPicker: (context, currentValue) {
+//           return showDatePicker(
+//               context: context,
+//               firstDate: DateTime(1900),
+//               initialDate: currentValue ?? DateTime.now(),
+//               lastDate: DateTime(2100));
+//         },
+//       ),
     
       
-    ]));
+//     ]));
     
-  }
+//   }
+// }
+
+// class BasicTimeField extends StatelessWidget {
+//   final format = DateFormat("HH:mm");
+
+//   BasicTimeField({super.key});
+//   @override
+//   Widget build(BuildContext context) {
+//     return Column(children: <Widget>[
+//       Text('Basic time field (${format.pattern})'),
+//       DateTimeField(
+//         format: format,
+//         onShowPicker: (context, currentValue) async {
+//           final time = await showTimePicker(
+//             context: context,
+//             initialTime: TimeOfDay.fromDateTime(currentValue ?? DateTime.now()),
+//           );
+//           return DateTimeField.convert(time);
+//         },
+//       ),
+//     ]);
+//   }
+// }
+
+
+
+class BasicDataTimeField extends StatefulWidget {
+  const BasicDataTimeField({super.key});
+
+  @override
+  State<BasicDataTimeField> createState() => _BasicDataTimeFieldState();
 }
 
-class BasicTimeField extends StatelessWidget {
-  final format = DateFormat("HH:mm");
+class _BasicDataTimeFieldState extends State<BasicDataTimeField> {
+    final format = DateFormat("dd-MM-yyyy HH:mm");
 
-  BasicTimeField({super.key});
   @override
   Widget build(BuildContext context) {
-    return Column(children: <Widget>[
-      Text('Basic time field (${format.pattern})'),
-      DateTimeField(
-        format: format,
-        onShowPicker: (context, currentValue) async {
-          final time = await showTimePicker(
-            context: context,
-            initialTime: TimeOfDay.fromDateTime(currentValue ?? DateTime.now()),
-          );
-          return DateTimeField.convert(time);
-        },
-      ),
-    ]);
-  }
-}
-
-class BasicDateTimeField extends StatelessWidget {
-  final format = DateFormat("dd-MM-yyyy HH:mm");
-
-  BasicDateTimeField({super.key});
-  @override
-  Widget build(BuildContext context) {
-    return 
-    
-    
-    Material(
+    return Material(
     child: Column(children: <Widget>[
       Text('Data e horario (${format.pattern})'),
       DateTimeField(
