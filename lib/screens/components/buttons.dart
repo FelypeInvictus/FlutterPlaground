@@ -3,6 +3,7 @@ import 'package:app/screens/home_tab.dart';
 import 'package:app/screens/learning_stack.dart';
 import 'package:app/screens/container_hide.dart';
 import 'package:app/screens/select_calendar.dart';
+import 'package:app/screens/show_lucky_number.dart';
 
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -68,13 +69,22 @@ class buttons extends StatelessWidget {
               context,
               MaterialPageRoute(builder: (context) {
                 return const BasicDataTimeField();
-
-
-                
               }),
             );
           }),
           child: Text('Test Date'.toUpperCase()),
+        ),
+        space(),
+        ElevatedButton(
+          onPressed: (() {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) {
+                return const ShowLuckyNumber();
+              }),
+            );
+          }),
+          child: Text('NÚMERO DA SORTE'),
         ),
       ]),
     );

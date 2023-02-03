@@ -72,9 +72,21 @@ class _BasicDataTimeFieldState extends State<BasicDataTimeField> {
   @override
   Widget build(BuildContext context) {
     return Material(
-    child: Column(children: <Widget>[
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+          
       Text('Data e horario (${format.pattern})'),
-      DateTimeField(
+      SizedBox(
+        width: 300,
+      child: DateTimeField(
+        decoration: InputDecoration(
+        border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(5.0),
+            borderSide: const BorderSide(color: Colors.green)),
+        icon: const Icon(Icons.calendar_today),
+        ),
+      
         format: format,
         onShowPicker: (context, currentValue) async {
           final date = await showDatePicker(
@@ -93,6 +105,7 @@ class _BasicDataTimeFieldState extends State<BasicDataTimeField> {
             return currentValue;
           }
         },
+      ),
       ),
     ]));
   }
