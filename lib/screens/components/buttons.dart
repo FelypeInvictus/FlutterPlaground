@@ -1,4 +1,5 @@
 import 'package:app/screens/bottom_model_sheet.dart';
+import 'package:app/screens/drawer.dart';
 import 'package:app/screens/home_tab.dart';
 import 'package:app/screens/learning_stack.dart';
 import 'package:app/screens/container_hide.dart';
@@ -85,6 +86,18 @@ class buttons extends StatelessWidget {
             );
           }),
           child: Text('NÚMERO DA SORTE'),
+        ),
+        space(),
+        ElevatedButton(
+          onPressed: (() {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) {
+                return const ProfileUser();
+              }),
+            );
+          }),
+          child: Text('DRAWER'),
         ),
       ]),
     );
