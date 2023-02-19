@@ -30,7 +30,14 @@ class PopupMenuWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return PopupMenuButton<OPCOES>(
       icon: Icon(Icons.more_vert),
-      onSelected: null,
+      onSelected: (value) {
+        switch (value) {
+          case :
+            
+            break;
+          default:
+        }
+      },
       itemBuilder: (context) => <PopupMenuEntry<OPCOES>>[
         PopupMenuItem(child: Text('Opções')),
         PopupMenuItem(value: OPCOES.SAIR, child: Text('Sair')),
